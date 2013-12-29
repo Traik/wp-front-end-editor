@@ -217,7 +217,7 @@ class WP_Front_End_Editor {
 		wp_enqueue_script( 'tinymce-4', $this->url() . 'js/tinymce/tinymce.min.js', array(), $this->version_tinymce, true );
 		wp_enqueue_script( 'wp-front-end-editor', $this->url() . 'js/wp-front-end-editor.js', array(), $this->version, true );
 		
-		wp_localize_script( 'wp-front-end-editor', 'wp_fee', array( 'post_id' => $post->ID, 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+		wp_localize_script( 'wp-front-end-editor', 'wp_fee', array( 'post_id' => $post->ID, 'ajax_url' => admin_url( 'admin-ajax.php' ), 'wp_nonce' => wp_create_nonce( 'fee_update_post_' . $post->ID ) ) );
 		
 	}
 	
