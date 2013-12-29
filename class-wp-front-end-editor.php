@@ -380,7 +380,7 @@ class WP_Front_End_Editor {
 			$content = shortcode_unautop( $content );
 			$content = $this->do_shortcode( $content );
 			$content = str_replace( array( '<!--nextpage-->', '<!--more-->' ), array( esc_html( '<!--nextpage-->' ), esc_html( '<!--more-->' ) ), $content );
-			$content = '<div id="fee-edit-content-' . $post->ID . '" class="contenteditable">' . $content . '</div>';
+			$content = '<div id="fee-edit-content-' . $post->ID . '" class="contenteditable fee-edit-content">' . $content . '</div>';
 			
 		}
 			
